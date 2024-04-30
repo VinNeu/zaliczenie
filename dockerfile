@@ -8,9 +8,11 @@ COPY calculator.py .
 COPY test_calculator.py .
 COPY requirements.txt .
 
+# Zainstaluj zależności
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Uruchom cele Makefile
-RUN make deps
+
 RUN make lint
 RUN make test
 RUN make run
