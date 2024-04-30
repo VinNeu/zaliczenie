@@ -6,8 +6,9 @@ def add(a, b):
 # flake8: noqa
 def main():
     print("Witaj w kalkulatorze!")
-    
-    while True:
+    end = 10
+    val = 0
+    while val < end:
         try:
             a = random.randint(0,999)
             b = random.randint(0,999)
@@ -17,8 +18,8 @@ def main():
         except KeyboardInterrupt:
             print("\nDo widzenia!")
             break
-
-        time.sleep(5)
+        val+=1
+        time.sleep(0.5)
 
 if __name__ == "__main__":
     main()
