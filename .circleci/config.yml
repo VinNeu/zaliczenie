@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  zaliczenie:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t my-calculator .
+      - run:
+          name: Run container
+          command: |
+            docker run my-calculator
+
+workflows:
+  zlaiczenie-workflow:
+    jobs:
+      - zaliczenie
